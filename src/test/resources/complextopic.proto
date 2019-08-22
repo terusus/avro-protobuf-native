@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message root {
+    int64 rootInt = 1;
+    string rootString = 3;
+    inner rootInner = 5;
+}
+
+message inner {
+    repeated string innerRepeatedString = 1;
+    int64 innerInt = 2;
+    repeated int64 innerRepeatedInt = 3 [packed=true];
+    string innerString = 4;
+}
