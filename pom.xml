@@ -13,38 +13,51 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<project
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>21</version>
-  </parent>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <groupId>terusus.avro.protobuf</groupId>
-  <artifactId>avro-protobuf-native</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+    <parent>
+        <groupId>org.apache</groupId>
+        <artifactId>apache</artifactId>
+        <version>21</version>
+    </parent>
 
-  <name>Apache Avro Protobuf Native Serde</name>
-  <description>Serialization and deserialization between Avro-generated classes and Protobuf data.</description>
+    <groupId>terusus.avro.protobuf</groupId>
+    <artifactId>avro-protobuf-native</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-  <properties>
-    <avro.version>1.9.1</avro.version>
-  </properties>
+    <name>Apache Avro Protobuf Native Serde</name>
+    <description>Serialization and deserialization between Avro-generated classes and Protobuf data.</description>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.avro</groupId>
-      <artifactId>avro</artifactId>
-      <version>${avro.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.avro</groupId>
-      <artifactId>avro-protobuf</artifactId>
-      <version>${avro.version}</version>
-    </dependency>
-  </dependencies>
+    <properties>
+        <avro.version>1.9.1</avro.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-protobuf</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+    </dependencies>
 </project>
