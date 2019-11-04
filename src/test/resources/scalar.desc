@@ -1,0 +1,20 @@
+
+‰
+scalar.proto"ð
+scalar
+double (Rdouble
+float (Rfloat
+int32 (Rint32
+int64 (Rint64
+uint32 (Ruint32
+uint64 (Ruint64
+sint32 (Rsint32
+sint64 (Rsint64
+fixed32	 (Rfixed32
+fixed64
+ (Rfixed64
+sfixed32 (Rsfixed32
+sfixed64 (Rsfixed64
+bool (Rbool
+string (	Rstring
+bytes (Rbytesbproto3
