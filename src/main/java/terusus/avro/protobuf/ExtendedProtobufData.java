@@ -5,9 +5,19 @@ import org.apache.avro.Schema;
 import org.apache.avro.protobuf.ProtobufData;
 
 public class ExtendedProtobufData extends ProtobufData {
+    final private static ExtendedProtobufData instance;
+
     final public static String KEY_NUMBER = "number";
     final public static String KEY_WIRE = "wire";
     final public static String KEY_PACKED = "packed";
+
+    static {
+        instance = new ExtendedProtobufData();
+    }
+
+    public static ExtendedProtobufData get() {
+        return instance;
+    }
 
     @Override
     public Schema getSchema(FieldDescriptor fieldDescriptor) {
