@@ -22,11 +22,11 @@ public class ProtobufNativeDatumWriter<D> extends GenericDatumWriter<D> {
     @Override
     public void writeWithoutConversion(Schema schema, Object datum, Encoder out) throws IOException {
         ProtobufEncoder protobufEncoder = (ProtobufEncoder)out;
-        boolean isPacked = (Boolean)schema.getObjectProp(ExtendedProtobufData.KEY_PACKED);
         Optional<Integer> maybeNumber = Optional.ofNullable((Integer)schema.getObjectProp(ExtendedProtobufData.KEY_NUMBER));
 
         if (maybeNumber.isPresent()) {
             int number = maybeNumber.get();
+            boolean isPacked = (Boolean)schema.getObjectProp(ExtendedProtobufData.KEY_PACKED);
 
             if (isPacked) {
                 protobufEncoder.writeTag(number, WireFormat.WIRETYPE_LENGTH_DELIMITED);
